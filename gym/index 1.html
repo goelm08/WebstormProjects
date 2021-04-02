@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale= 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <link rel="icon" href="img/logo.png"> <!--for logo-->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /*CSS Reset*/
+        .header{
+            font-family: Gabriola;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            background: url("img/background.jpg") no-repeat fixed;
+            background-size: cover;
+        }
+
+        .left {
+            position: absolute;
+            float: left;
+            top: 20px;
+            left: 30px;
+            display: inline-block;
+        }
+
+        .mid {
+            margin: 30px auto;
+            display: block;
+            font-family: Cambria;
+            width: fit-content;
+            max-width: 50%;
+            font-size: larger;
+            text-align: center;
+        }
+
+        .right {
+            display: inline-block;
+            float: right;
+            position: absolute;
+            top: 30px;
+            right: 20px;
+        }
+        .navbar{
+            display: inline-block;
+        }
+
+        .navbar li{
+            display: inline-block;
+        }
+        .navbar li a{
+            text-decoration: none;
+            color: wheat;
+            max-font-size: 25px;
+            padding: 15px 15px;
+        }
+
+        .navbar li a:hover, .navbar li a:active{
+            text-decoration: underline;
+            color: coral;
+        }
+
+        .btn{
+            margin: 0px 9px;
+            background-color: black;
+            color: wheat;
+            border: none;
+            font-size: medium;
+            cursor: pointer;
+            border-radius: 10px;
+            padding: 15px 20px;
+        }
+        .btn:hover{
+            background-color: rgba(6,25,10,0.71);
+        }
+
+        .container1{
+            margin: 30px 30px;
+            padding: 30px;
+        }
+
+        form input {
+            padding: 12px 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: black;
+            color: wheat;
+            border-radius: 4px;
+            border: none;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        form label {
+            padding: 5px 5px 12px 0;
+            width: 100px;
+            text-align: right;
+            display: inline-block;
+        }
+
+        form input[type="submit"], input[type = reset] {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="left">  <!--for logo-->
+        <img src="img/logo.png" style="max-height: 60px"/>
+    </div>
+    <div class="mid">   <!--for navbar-->
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Fitness Calc.</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="right"> <!--for buttons-->
+        <button class="btn">Email Us</button>
+        <button class="btn">Call Us</button>
+    </div>
+</header>
+
+
+<div class="container1">
+    <h1>Join the best gym now</h1>
+    <form action="backend.php"> <!--form will be submitted to backend.php, if it exists-->
+        <div class="container">
+            <label for="name">Name</label> <!--now when ii click on label, it will automatically take me to box-->
+            <input type="text" name="Name" id="name" placeholder="Your Name"><br>
+            <!--name attribute makes us able to see things in backend-->
+        </div>
+        <div class="container">
+            <label for="roll">Roll No.</label>
+            <input type="text" name="roll" id="roll" placeholder="your roll no">
+        </div>
+        <div class="container">
+            <label for=email>Email</label>
+            <input type="Email" name="email" placeholder="your email" id=email>
+        </div>
+        <div class="container">
+            <label for="dob">DOB</label>
+            <input type="date" name="DOB" id=dob placeholder="your birthday">
+        </div>
+        <div class="container">
+            <label for="gender"> Gender</label>
+            <span style="color: white">Male<input type="radio" name="Gender" id=gender>
+        Female<input type="radio" name="Gender"></span>
+        </div>
+        <div style="justify-content: center; margin-left: 45%">
+            <input type="submit" class="btn" name="submit">
+            <input type="reset" class="btn" name="reset">
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

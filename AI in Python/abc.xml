@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="abc.xsl"?>
+
+
+        <!DOCTYPE books[
+        <!ELEMENT books (book+)>
+        <!ELEMENT book (title+, author+, year+, price+, ISBN+, publisher+, edition+)>
+        <!ATTLIST book category CDATA "">
+        <!ELEMENT lang (#PCDATA)>
+        <!ELEMENT title (#PCDATA)>
+        <!ATTLIST title lang CDATA "">
+        <!ELEMENT author (#PCDATA)>
+        <!ELEMENT year (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+        <!ELEMENT ISBN (#PCDATA)>
+        <!ELEMENT publisher (#PCDATA)>
+        <!ELEMENT edition (#PCDATA)>
+        ]>
+<books>
+
+    <book category="cooking">
+        <title lang="en">Everyday Italian</title>
+        <author>Giada De Laurentiis</author>
+        <year>2005</year>
+        <price>300.00</price>
+        <ISBN>111111</ISBN>
+        <publisher>ABC Publications Ltd.</publisher>
+        <edition>1st</edition>
+    </book>
+
+    <book category="children">
+        <title lang="en">Harry Potter</title>
+        <author>J K. Rowling</author>
+        <year>2005</year>
+        <price>2995</price>
+        <ISBN>111123</ISBN>
+        <publisher>XYZ Publications Ltd.</publisher>
+        <edition>3rd</edition>
+    </book>
+
+    <book category="web">
+        <title lang="en">XQuery Kick Start</title>
+        <author>James McGovern</author>
+        <author>Per Bothner</author>
+         
+        <author>James Linn</author>
+        <author>Vaidyanathan Nagarajan</author>
+        <year>2003</year>
+        <price>499.9</price>
+        <ISBN>111123</ISBN>
+        <publisher>ABC Publications Ltd.</publisher>
+        <edition>6th</edition>
+    </book>
+
+    <book category="web">
+        <title lang="en">Learning XML</title>
+        <author>Erik T. Ray</author>
+        <year>2003</year>
+        <price>395.95</price>
+        <ISBN>111115</ISBN>
+        <publisher>ABC Publications Ltd.</publisher>
+        <edition>10th</edition>
+    </book>
+
+</books>

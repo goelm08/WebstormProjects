@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale= 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 6</title>
+    <link rel="icon" href="../AI%20in%20Python/IMAGES/CLG%20HW/logo1.png"> <!--for logo-->
+    <style>
+        body {
+            font-family: "Goudy Old Style", serif;
+            font-size: 1.3em;
+            background-color: peachpuff;
+            color: chocolate;
+        }
+
+        h2 {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 5%;
+            width: 39%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            font-size: large;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .form {
+            max-width: 600px;
+            margin: auto auto;
+        }
+
+        form input {
+            padding: 12px 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: black;
+            cursor: pointer;
+            border-radius: 4px;
+            border: none;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        form label {
+            padding: 5px 5px 12px 0;
+            width: 100px;
+            text-align: right;
+            display: inline-block;
+        }
+
+        form input[type="submit"], input[type = reset] {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        h1, h3 {
+            text-align: center;
+            margin: 5px
+        }
+
+        small {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<h1>Assignment 6</h1>
+<h2>2019UCO1558</h2>
+<h2>Mayank Goel</h2>
+<div class="form">
+    <h3>Login</h3>
+    <form action="#" id=form1> <!--form will be submitted to backend.php, if it exists-->
+        <div class="container">
+            <label for="FName">Fist Name</label> <!--now when ii click on label, it will automatically take me to box-->
+            <input type="text" name="FName" id="FName" placeholder="Your Name"><br>
+            <small></small>
+        </div>
+        <div class="container">
+            <label for=LName>Last Name</label>
+            <input type="text" name="LName" placeholder="your Surname" id=LName>
+            <br/>
+            <small></small>
+        </div>
+        <div class="container">
+            <label for=email>Email</label>
+            <input type="Email" name="email" placeholder="your email" id=email>
+            <br/>
+            <small></small>
+        </div>
+        <div class="container">
+            <label for=password>Password</label>
+            <input type="password" name="password" placeholder="******" id=password>
+            <br/>
+            <small></small>
+        </div>
+        <div class="container">
+            <label for=Phone>Phone</label>
+            <input type="number" name="Phone" placeholder="your phone" id=Phone>
+            <br/>
+            <small></small>
+        </div>
+        <div class="container">
+            <label for=Address>Address</label>
+            <input type="text" name="Address" placeholder="your Address" id=Address>
+            <br/>
+            <small></small>
+        </div>
+        <br>
+        <div style="justify-content: center; align-items: center; display: flex">
+            <input type="submit" onclick="validate()" name="submit">
+            <input type="reset" name="reset">
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    let form = document.getElementById("form1")
+    /*form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        validate();
+    });*/
+    let bool = true;
+
+    function validate() {
+        let FName = document.getElementById("FName")
+        let LName = document.getElementById("LName")
+        let email = document.getElementById("email")
+        let password = document.getElementById("password")
+        let phone = document.getElementById("Phone")
+        let address = document.getElementById("Address")
+
+
+        if (FName.value.trim().length < 6)
+            giveError(FName, "Name can't be less than 6 char")
+        else {
+            let reg = /^[A-Za-z]/;
+            if (!reg.test(FName.value.trim()))
+                giveError(FName, "only alpha allowed")
+            else {
+                success(FName)
+            }
+        }
+
+        if (password.value.trim() < 6)
+            giveError(password, "Weak, at-least 6 char needed")
+        else
+            success(password)
+
+        if (phone.value.trim() !== 10)
+            giveError(phone, "wrong number");
+        else
+            success(phone)
+
+        if (LName.value.trim().length === 0)
+            giveError(LName, "can't be empty")
+        else
+            success(LName);
+
+        if (address.value.trim().length === 0)
+            giveError(address, "can't be empty")
+        else
+            success(address);
+
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email.value.trim()))
+            success(email)
+        else
+            giveError(email, "wrong email")
+
+        return bool;
+    }
+
+    function giveError(element, error) {
+        bool = false;
+        let formControl = element.parentElement;
+        formControl.querySelector('small').innerText = error;
+        formControl.querySelector('input').style.border = "2px solid red"
+    }
+
+    function success(element) {
+        element.parentElement.querySelector('input').style.border = "2px solid green"
+    }
+
+</script>
+</body>
+</html>

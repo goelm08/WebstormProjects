@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale= 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Pseudo Selector and more designing</title>
+    <style>
+        body{
+            background-color: plum;
+            font-family: "Goudy Old Style", serif;
+        }
+        .container{
+            background-color: #ff9af0;
+            border: 2px solid blueviolet;
+            padding: 34px;
+            margin: 34px auto;
+        }
+        a{
+            text-decoration: none;
+        }
+        /*this is a pseudo selector*/
+        button:hover{
+            color: #eeeeee;
+            background-color: mediumpurple;
+        }
+        a:hover{
+            color: #eeeeee;
+            background-color: mediumpurple;
+        }
+        a:visited{
+            background-color: pink;
+        }
+        .btn{
+            padding: 6px;
+            border: none;
+            background-color: #ff36e5;
+            cursor: pointer;
+            font-size: medium;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class=container id = cont1>
+        <h3>
+            This is my Heading
+        </h3>
+        <p>
+            Some random text that i just wrote.
+        </p>
+        <a href="15.%20modal%20window.html" class="btn">Read More</a>
+        <button class="btn">Contact us</button>
+    </div>
+</body>
+</html>

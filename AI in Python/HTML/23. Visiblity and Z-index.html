@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visiblity and Z-index</title>
+    <style>
+        .box {
+            width: 170px;
+            height: 170px;
+            /*z-index: will work only if position is absolute, relative, fixed, sticky*/
+            border: 3px solid crimson;
+        }
+
+        #box1 {
+            position: relative;
+            z-index: 1;
+            top: 50px;
+            background-color: oldlace;
+            /*visibility: hidden; !*box will be hidden but its space will be reserved*!*/
+        }
+
+        #box2 {
+            position: relative;
+            top :30px;
+            z-index: -1;
+            background-color: gainsboro;
+            /*display: none; !*box wil cease to exist as it was never written*!*/
+        }
+
+        #box3 {
+            background-color: gold
+        }
+
+        #box4 {
+            background-color: lemonchiffon
+        }
+    </style>
+</head>
+<body>
+<div class="box" id=box1>
+    box 1
+</div>
+<div class="box" id=box2>
+    box 2
+</div>
+<div class="box" id=box3>
+    box 3
+</div>
+<div class="box" id=box4>
+    box 4
+</div>
+
+</body>
+</html>

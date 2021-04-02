@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale= 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Navigation Bar</title>
+    <style>
+        .navbar{
+            background-color: wheat;
+            border-radius: 4px;
+        }
+        .navbar ul{
+            overflow: auto;     /*without overflow background color won't happe  n*/
+        }
+        .navbar li{
+            float: left;
+            list-style: none;
+            margin: 10px;       /*padding can be in a also but margin must be in li only*/
+        }
+        .navbar li a{
+            padding: 3px;
+            text-decoration: none;
+        }
+        .navbar li a:hover{
+            color: #d231e7;
+        }
+        .navbar input{
+            border: 2px solid black;
+            text-align: center;
+        }
+        .search{
+            float: right;
+            padding: 10px 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <div class="search">
+                    <input type="search" type="text" id="search" placeholder="Search Here" formaction="a.php">
+                    <input type="submit">
+                </div>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

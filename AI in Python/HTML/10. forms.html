@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML forms</title>
+    <style>
+        body {
+            background-color: powderblue;
+            font-size: 30px;
+            color: red;
+            font-family: Open Sans, serif;
+            border: 1px solid #454545;
+        }
+
+        input{
+            background-color: aliceblue;
+        }
+        input:hover{
+            transform: scale(1.2);
+            background-color: azure;
+        }
+        select{
+            background-color: aliceblue;
+        }
+        textarea{
+            background-color: powderblue;
+            color: antiquewhite;
+            text-emphasis: white;
+        }
+
+    </style>
+</head>
+<body>
+<form>
+    <!--
+    <input type="text">	Defines a single-line text input field
+    <input type="radio">	Defines a radio button (for selecting one of many choices)
+    <input type="submit">	Defines a submit button (for submitting the form)
+    -->
+    <fieldset>
+
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br>
+
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label><br>
+
+    <label for="car">Cars</label><br>
+        <select id="car" name="cars" multiple>
+            <option value="maruti">maruti</option>
+            <option value="honda">honda</option>
+            <option value="mahindra">mahindra</option>
+            <option value="hyundai">hyundai</option>
+            <option value="none" selected>none</option>
+        </select><br>
+    <label for="remarks">Remarks</label><br>
+        <textarea id="remarks" name="remarks" rows="10" cols="60">
+            Please Enter your remarks here
+        </textarea>
+        <button type="button" onclick="alert('submitted Successfully')">
+            <input type="submit" name="submit">
+        </button>
+    </fieldset>
+</form>
+</body>
+</html>

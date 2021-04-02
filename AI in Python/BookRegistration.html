@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="IMAGES\\CLG HW\\nsutLogo.webp">
+    <title>Registration</title>
+    <style>
+        .container {
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        body {
+            background-image: url("../AI in Python/IMAGES/CLG HW/bookBackground.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            font-family: Gabriola;
+            font-size: xx-large;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .navbar ul {
+            overflow: auto; /*without overflow background color won't happen*/
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 10px; /*padding can be in a also but margin must be in li only*/
+        }
+
+        .navbar li a {
+            padding: 3px;
+            color: wheat;
+            text-decoration: none;
+        }
+
+        .navbar li a:hover {
+            color: chocolate;
+        }
+
+        .navbar input {
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        .search {
+            float: right;
+            padding: 10px 50px;
+        }
+
+            form input {
+                padding: 12px 20px;
+                margin-left: 10px;
+                margin-right: 10px;
+                color: black;
+                cursor: pointer;
+                border-radius: 4px;
+                border: none;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            form label {
+                padding: 5px 5px 12px 0;
+                width: 100px;
+                text-align: right;
+                display: inline-block;
+            }
+
+            form input[type="submit"], input[type = reset] {
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float: left;
+            }
+
+        h1 {
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body style="color: bisque; font-family: Gabriola,serif">
+<header>
+    <nav class="navbar">
+        <ul>
+            <img src="IMAGES\\CLg hw\\nsutLogo.webp" style="height: 50px; float: left;">
+            <li><a href="BookStore.html" target="_blank">Home</a></li>
+            <li><a href="login.html" target="_blank">login</a></li>
+            <li><a href="BookRegistration.html" target="_blank">Registration</a></li>
+            <li><a href="catalog.html" target="_blank">Catalog</a></li>
+            <div class="search">
+                <input type="search" type="text" id="search" placeholder="Search Here" formaction="#"
+                       style="padding: 12px 20px;border: none;border-radius: 4px;cursor: pointer;">
+                <input type="submit"
+                       style="padding: 12px 20px;border: none;border-radius: 4px;cursor: pointer;">
+            </div>
+        </ul>
+    </nav>
+</header>
+<h1 align="center">Registration form</h1>
+<form action="backend.php"> <!--form will be submitted to backend.php, if it exists-->
+    <div class="container">
+        <label for="name">Name</label> <!--now when ii click on label, it will automatically take me to box-->
+        <input type="text" name="Name" id="name" placeholder="Your Name"><br>
+        <!--name attribute makes us able to see things in backend-->
+    </div>
+    <div class="container">
+        <label for="roll">Roll No.</label>
+        <input type="text" name="roll" id="roll" placeholder="your roll no">
+    </div>
+    <div class="container">
+        <label for=email>Email</label>
+        <input type="Email" name="email" placeholder="your email" id=email>
+    </div>
+    <div class="container">
+        <label for="dob">DOB</label>
+        <input type="date" name="DOB" id=dob placeholder="your birthday">
+    </div>
+    <div class="container">
+        <label for="gender"> Gender</label>
+        <span style="color: white">Male<input type="radio" name="Gender" id=gender>
+        Female<input type="radio" name="Gender"></span>
+    </div>
+    <div style="justify-content: center; margin-left: 45%">
+        <input type="submit" name="submit">
+        <input type="reset" name="reset">
+    </div>
+</form>
+</body>
+</html>

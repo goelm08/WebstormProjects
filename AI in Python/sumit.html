@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <style>
+        .navbar {
+            font-size: larger;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+
+            overflow: hidden;
+            background-color: #333;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar li {
+            float: left;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .navbar .active {
+            background-color: #4CAF50;
+        }
+
+        .navbar  h1 {
+            color: white;
+            font-family: cursive;
+            text-align: center;
+        }
+        frame{
+            display: inline-block;
+            border: none;
+            box-sizing: border-box;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+<header>
+    <nav class="navbar">
+        <ul>
+            <li><img src="nsut-logo.jpg" alt="nsut-logo" height="70px" width="70px"></li>
+            <li> <h1>CK BookStore</h1></li>
+            <li><a href="D:\Web Development\Assignment2\loginPage.html " target="_blank" class="input1">Login</a></li>
+            <li><a href="D:\Web Development\Assignment2\catalog.html" target="_blank" class="input2">Catalog</a></li>
+            <li><a href="D:\Web Development\Assignment2\Registration.html" target="_blank" class="input3">Registration</a></li>
+        </ul>
+    </nav>
+</header>
+<br>
+    <iframe src="login.html" class="frame" name="iframe_a" width=49% height="1000px" title="Iframe" style="float: left"></iframe>
+    <iframe src="login.html" class="frame" name="iframe_b" width=49                         % height="1000px" title="Iframe" style="float: right"></iframe>
+
+
+</body>
+
+</html>

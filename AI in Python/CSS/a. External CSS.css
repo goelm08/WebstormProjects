@@ -1,0 +1,73 @@
+body {
+    background-color: powderblue;
+    backface-visibility: initial;
+    text-align: center;
+    color: azure;
+    font-family: "Goudy Old Style", serif;
+    font-size: 25px;
+}
+
+p {
+    color: red;
+    border: 1px solid powderblue;
+    padding: 10px; /* distance between text and border*/
+    margin: 5px; /*space outside border*/
+}
+
+h1 {
+    color: blue;
+}
+
+a.link {
+    color: #008000;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a.visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a.hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a.active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.reset{
+    all:unset;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 2px;
+    text-align: left;
+}
+
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+table#t01 th {
+    color: white;
+    background-color: black;
+}
+.map{
+    position: relative;
+}

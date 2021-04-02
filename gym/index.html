@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Micro Oven</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+            integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.js"
+            integrity="sha512-UNbeFrHORGTzMn3HTt00fvdojBYHLPxJbLChmtoyDwB6P9hX5mah3kMKm0HHNx/EvSPJt14b+SlD8xhuZ4w9Lg=="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js.map"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<style>
+
+    .button {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+
+<body>
+
+<h1 style="text-align:center">Micro Oven</h1>
+
+<div style="margin-top:30px;width:280px;height:50px;margin-left: 170px;background-color:red;position: relative">
+    <div style="display: inline-block">
+        <span style="font-size:2em">Temperature :</span>&nbsp;&nbsp;&nbsp;<span id="temp"></span><span>C</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    <div style="display: inline-block;margin-top:3px;position:fixed">
+        <button id="inc">&#8710;</button>
+        <br/>
+        <button id="dec">&nabla;</button>
+    </div>
+</div>
+
+<div id="oven"
+     style="width:80%;height:600px;background-color:black;margin-left:auto;margin-right:auto;position:relative">
+
+    <div id="heater" style="display:inline-block;margin:50px;width:70%;height:500px;background-color:grey">
+
+        <img src="img/pizza.png" id="food" style="display:none;position:absolute;width:60%;height:60%;left:8%;top:20%">
+
+        <div style="float:right;font-size:3em;margin-right:20px;margin-top:100px">
+            <span>D</span>
+            <br/>
+            <span>O</span>
+            <br/>
+            <span>O</span>
+            <br/>
+            <span>R</span>
+            <br/>
+            <button id="butt" style="width:55px;height:50px;background-color:green;padding:1px">
+                <p id="b">OPEN</p>
+            </button>
+        </div>
+
+    </div>
+
+    <div style="position:relative;display:inline-block;margin-top:50px;margin-left:20px;margin-bottom:50px;width:18%;height:500px;background-color:grey">
+
+        <button class="button" id="s" style="background-color:red;left:30%;top:20px;width:100px;height:70px;"
+                onclick="starting()">
+            START
+        </button>
+
+
+        <button class="button" id="m"
+                style="background-color:black;color:white;left:12%;top:130px;width:80px;height:50px;">
+            MINUTE
+        </button>
+
+        <div style="position:absolute;top:200px;left:14%">
+            <input type="number" id="min" style="width:33%;font-size:1.2em"/>
+        </div>
+
+        <button class="button" id="se"
+                style="background-color:black;color:white;left:56%;top:130px;width:80px;height:50px">
+            SECOND
+        </button>
+
+        <div style="position:absolute;top:200px;left:58%">
+            <input type="number" id="sec" style="width:66%;font-size:1.2em"/>
+        </div>
+
+        <div style="position:absolute;top:250px;left:25%;font-size:1.5em">
+            <span>Time : </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="time"></span>
+        </div>
+
+        <button class="button" id="begin"
+                style="background-color:green;font-size:1em;color:black;left:30%;top:300px;width:100px;height:70px">
+            BEGIN
+        </button>
+
+        <button class="button" id="e" style="background-color:red;left:30%;top:400px;width:100px;height:70px;">
+            END
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<script type="text/javascript">
+
+    var ascode = [];
+    var t1 = "     org 10";
+    ascode.push(t1);
+    ascode.push("     door 0");
+    ascode.push("     ldan tim");
+    ascode.push("     stan ctr");
+    ascode.push("     ldan hea");
+    ascode.push("     stan ptr");
+    ascode.push("     clan");
+
+
+    document.getElementById("butt").onclick = function () {
+        if (document.getElementById("b").innerHTML === "OPEN") {
+            document.getElementById("butt").style.backgroundColor = "red";
+            document.getElementById("b").innerHTML = "CLOSE";
+            ascode[1] = "     door 1";
+        } else {
+            document.getElementById("butt").style.backgroundColor = "green";
+            document.getElementById("b").innerHTML = "OPEN";
+            ascode[1] = "     door 0";
+        }
+    }
+
+
+    document.getElementById("inc").onclick = function () {
+        if (document.getElementById("oven").style.backgroundColor === "yellow") {
+            var temp = document.getElementById("temp").innerHTML;
+            temp = parseInt(temp, 10);
+            temp += 10;
+            temp = temp.toString();
+            document.getElementById("temp").innerHTML = temp;
+            ascode.push("     inch");
+            ascode.push("     addN ptr");
+            ascode.push("     clan");
+        }
+    }
+
+    document.getElementById("dec").onclick = function () {
+        if (document.getElementById("oven").style.backgroundColor === "yellow") {
+            var temp = document.getElementById("temp").innerHTML;
+            temp = parseInt(temp, 10);
+            temp -= 10;
+            temp = temp.toString();
+            document.getElementById("temp").innerHTML = temp;
+            ascode.push("     dech");
+            ascode.push("     addN ptr");
+            ascode.push("     clan");
+        }
+    }
+
+    document.getElementById("s").onclick = function () {
+        document.getElementById("oven").style.backgroundColor = "yellow";
+        document.getElementById("min").value = "00";
+        document.getElementById("sec").value = "00";
+        document.getElementById("time").innerHTML = "00";
+        document.getElementById("temp").innerHTML = "100";
+    }
+
+    document.getElementById("e").onclick = function () {
+        document.getElementById("oven").style.backgroundColor = "black";
+        document.getElementById("min").value = "";
+        document.getElementById("sec").value = "";
+        document.getElementById("food").style.display = "none";
+        document.getElementById("time").innerHTML = "";
+        document.getElementById("temp").innerHTML = "";
+    }
+
+
+    document.getElementById("m").onclick = function () {
+        if (document.getElementById("oven").style.backgroundColor === "yellow") {
+            var x = document.getElementById("min").value;
+            x = parseInt(x, 10);
+            x++;
+            ascode.push("     addmin");
+            ascode.push("     addN ctr");
+            ascode.push("     clan");
+            document.getElementById("min").value = x.toString();
+        }
+    }
+
+
+    document.getElementById("se").onclick = function () {
+        if (document.getElementById("oven").style.backgroundColor === "yellow") {
+            var x = document.getElementById("sec").value;
+            x = parseInt(x, 10);
+            x++;
+            ascode.push("     addsec");
+            ascode.push("     addN ctr");
+            ascode.push("     clan");
+            document.getElementById("sec").value = x.toString();
+        }
+    }
+
+
+    function download() {
+        var a = document.body.appendChild(
+            document.createElement("a")
+        );
+        a.download = "export.txt";
+
+        var list = document.getElementsByTagName("p");
+        var b = "";
+        for (var i = 0; i < ascode.length; i++) {
+            b += ascode[i] + "\r\n";
+        }
+        b = encodeURIComponent(b);
+        a.href = "data:text/html," + b;
+        a.click();
+    }
+
+
+    document.getElementById("begin").onclick = function () {
+
+        if (document.getElementById("oven").style.backgroundColor === "yellow") {
+            var min = document.getElementById("min").value;
+            var sec = document.getElementById("sec").value;
+            min = parseInt(min, 10);
+            sec = parseInt(sec, 10);
+            min *= 60;
+            var time = min + sec;
+            var x = time;
+
+            ascode.push("     begin");
+            ascode.push("     hlt");
+            ascode.push("hea, dec 100");
+            ascode.push("ptr, hex 0");
+            ascode.push("tim, dec 0");
+            ascode.push("ctr, hex 1");
+            ascode.push("     end");
+
+//     var div = document.createElement("div");
+//     div.addClass = "code";
+//     for( let i=0 ; i<ascode.length ; i++ ){
+//         div.innerHTML+=`<p>${ascode[i]}</p><br/>`;
+//     }
+//
+//
+//     downloadContent("t1.txt",document.getElementsByClassName("code")[0].innerHTML);
+
+            download();
+            document.getElementById("time").innerHTML = time.toString();
+
+            var counter = setInterval(function () {
+                console.log(x);
+                x--;
+                document.getElementById("time").innerHTML = x.toString();
+                if (x == 0) {
+                    document.getElementById("time").innerHTML = "00";
+                    document.getElementById("food").style.display = "block";
+                    clearInterval(counter);
+                }
+            }, 1000);
+        }
+    }
+
+
+</script>
+
+<script type="text/javascript">
+    function starting() {
+        var WshShell = new ActiveXObject("WScript.Shell");
+        WshShell.Exec("c:[color=red][b]\\\\[/b][/color]COA project");
+    }
+</script>
+
+</body>
+</html>

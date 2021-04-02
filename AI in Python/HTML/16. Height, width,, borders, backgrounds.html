@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Height, width, borders and backgrounds</title>
+    <style>
+        #firstPara{
+            background-color: red;
+            height: 100px;
+            width: 200px;
+            border-color: greenyellow;
+            border-width: 4px;
+            border-style: solid;
+            border-radius: 20px;  /*gives radius to edes of square*/
+        }
+        #secondPara{
+         background-color: #71ffff;
+            height: 100px;
+            width: 200px;
+            border-top: 2px solid azure;
+            border-right: 2px solid #10ff85;
+            border-left: 2px solid peachpuff;
+            border-bottom-left-radius: 30px;
+        }
+        #thirdPara{
+            height: 100px;
+            width: 200px;
+            background-image: url("IMAGES/7.png");
+            background-repeat: no-repeat; /*
+            if image is small it will repeat itself
+            repeat x will repeat it in only x and repeat y will do opp
+            */
+            background-size: contain; /*if image large, it will fit into frame*/
+            background-position: center;
+        }
+    </style>
+</head>
+<body style="background-color: plum">
+<p id = firstPara>
+    HI, this is first para
+</p>
+<p id = secondPara>
+    This is second Para
+</p>
+
+<p id = thirdPara>
+    This is third Para
+</p>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title> STYLE </title>
+</head>
+<style>
+    body{
+        background-color: wheat;
+        color: tomato;
+        padding: 5px;
+        font-family: Cambria;
+        align-items: center;
+    }
+    h1{
+        text-align: center;
+    }
+    button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input {
+        padding: 12px 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: black;
+        cursor: pointer;
+        border-radius: 4px;
+        border: none;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .date{
+        padding: 20px;
+        margin: auto;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<body>
+
+<h1>Mayank Goel</h1>
+<h1>2019UCO1558</h1>
+
+<div class="date">
+Date: <input type="text" id="demo"/>
+<button onclick="dateFunc()">click me!</button>
+<script>
+    function dateFunc() {
+        let date = new Date();
+        document.getElementById('demo').value=date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
+    }
+</script>
+</div>
+</body>
+
+<script type="text/javascript">
+
+    let n = window.prompt("Give n for FACTORIAL");
+
+    let f = 1;
+    for (let j = 2; j <= n; j++)
+        f *= j;
+
+    window.alert("Factorial of " + n + " is " + f);
+
+
+    n = window.prompt("Give n for table");
+    let str = "";
+    for (let i = 1; i <= 10; i++) {
+        str += n + "*" + i + " = " + n * i + "\n";
+    }
+    window.alert(str);
+
+    n = window.prompt("Input : n, output: sum of first n numbers");
+    let bool = window.confirm("Input Number :" + n);
+    if (bool) {
+        sum = n*(n-1)/2;
+        window.alert("Sum of first " + n + " numbers is " + sum);
+    }
+
+</script>
+</html>

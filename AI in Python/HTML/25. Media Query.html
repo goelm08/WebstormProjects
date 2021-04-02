@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        .box{
+            background-color: tomato;
+            color: navajowhite;
+            margin: 0 15px;
+            display: none;
+            text-align: center;
+            font-size: 72px;
+        }
+        @media only screen(max-width: 1000px) {    /* just like a conditional Statementx*/
+            #box1{
+                display: block;
+            }
+        }
+        @media (max-width: 800px) and (min-width: 300px) {
+            #box2{
+                display: block;
+                background-color: yellow;
+            }
+        }
+        @media (max-width: 900px) and (min-width: 300px) {
+            #box3{
+                display: block;
+                background-color: yellow;
+            }
+        }
+        @media (max-width: 1600px) {
+            #box4{
+                display: block;
+                background-color: violet;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="box" id =box1>I am iPhone</div>
+<div class="box" id =box2>I am Laptop</div>
+<div class="box" id =box3>I am desktop</div>
+<div class="box" id =box4>I am new</div>
+</body>
+</html>

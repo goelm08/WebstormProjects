@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Assignment 5</title>
+    <link rel="icon" href="../AI%20in%20Python/IMAGES/CLG%20HW/logo.png"/> <!--for logo-->
+    <style type="text/css">
+        body {
+            background-color: wheat;
+            color: tomato;
+            padding: 5px;
+            font-size: 2em;
+            font-family: Cambria, serif;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        select {
+            background-color: peachpuff;
+            text-decoration: none;
+            padding: 12px;
+            display: block;
+            border: 3px solid tomato;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .container {
+            display: block;
+            position: fixed;
+            align-items: center;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+        }
+
+        #answer{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Assignment 5</h1>
+<div class="container">
+    <label for="sl1"> Select a Country </label>
+    <br/>
+    <select id="sl1" name="country" onchange="printCapital(this)">
+        <option disabled="disabled" selected="selected" value="">Select</option>
+        <option value="India">India</option>
+        <option value="UK">UK</option>
+        <option value="USA">USA</option>
+        <option value="China">China</option>
+        <option value="France">France</option>
+    </select>
+    <p id="answer">
+
+    </p>
+
+
+    <form action="#">
+        <label for ="hi">
+            <input type="radio" id = "hi" name=""/>
+        </label>
+    </form>
+    <script type="text/javascript">
+        function printCapital(x) {
+            let p = document.getElementById("answer");
+            p.textContent = "";
+            switch (x.value) {
+                case "India" :
+                    p.innerText = "Delhi";
+                    break;
+                case "UK" :
+                    p.innerText = "London";
+                    break;
+                case "USA" :
+                    p.innerText = "Washington";
+                    break;
+                case "China":
+                    p.innerText = "Beijing";
+                    break;
+                case "France":
+                    p.innerText = "Paris";
+                    break;
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
